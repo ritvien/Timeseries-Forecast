@@ -15,10 +15,8 @@ def _boxplot(data, scale_factor=1.5):
     """
     clean_data = data.dropna().values
     Q1 = np.percentile(clean_data, 25)
-    print(f"Q1:{Q1}")
     Q3 = np.percentile(clean_data, 75)
     IQR = Q3 - Q1
-    print(Q1,Q3,IQR)
     lower_bound = Q1 - scale_factor * IQR
     upper_bound = Q3 + scale_factor * IQR
     
